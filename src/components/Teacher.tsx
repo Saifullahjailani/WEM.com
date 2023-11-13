@@ -17,7 +17,7 @@ const Teacher: React.FC<propsType> = ({ teacher, style }) => {
         <ImageContainer image={teacher.avatar.gatsbyImageData} alt="Team" />
         <TextContainer>
           <TextBox>
-            <TitleContainer>Najiullah Jailani</TitleContainer>
+            <TitleContainer>{teacher.name ?? "Unnamed"}</TitleContainer>
             <InstructorInfo>{teacher.title ?? "Tutor"}</InstructorInfo>
           </TextBox>
         </TextContainer>
