@@ -14,7 +14,10 @@ const Teacher: React.FC<propsType> = ({ teacher, style }) => {
   return (
     <MyLink to={`/team/${teacher.slug}`}>
       <CardContainer style={style}>
-        <ImageContainer image={teacher.avatar.gatsbyImageData} alt="Team" />
+        {teacher?.avatar?.gatsbyImageData && (
+          <ImageContainer image={teacher.avatar.gatsbyImageData} alt="Team" />
+        )}
+
         <TextContainer>
           <TextBox>
             <TitleContainer>{teacher.name ?? "Unnamed"}</TitleContainer>
