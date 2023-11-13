@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
-
+require("dotenv").config(
+  {
+    path: `.env`,
+  }
+);
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `WEM.com`,
@@ -12,15 +16,17 @@ const config: GatsbyConfig = {
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "",
-      "spaceId": ""
+      "spaceId": process.env.GATSBY_CONTENT_FULL_SPACE_ID,
+      "accessToken": process.env.GATSBY_CONTENT_FULL_DELIVERY_ID
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-styled-components", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
     }
-  }, {
+  },
+
+  {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
