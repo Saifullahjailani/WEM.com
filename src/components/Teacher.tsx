@@ -33,7 +33,7 @@ const Teacher: React.FC<propsType> = ({ teacher, style }) => {
 export default Teacher;
 
 export const MyLink = styled(Link)`
-  text-decoration: none;
+  text-decoration: none !important;
 `;
 
 const ImageSection = styled.div`
@@ -84,6 +84,7 @@ const TextContainer = styled.div`
 const TitleContainer = styled.h2`
   font-weight: 500 !important;
   font-family: Roboto, sans-serif !important;
+  color: black;
   margin: 0 !important;
   padding: 0 !important;
 `;
@@ -94,6 +95,7 @@ const InstructorInfo = styled.p`
   font-family: Roboto, sans-serif !important;
   margin: 0 !important;
   padding: 0 !important;
+  color: black;
 `;
 
 const TextBox = styled.div`

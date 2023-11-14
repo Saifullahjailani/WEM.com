@@ -70,7 +70,7 @@ const HeroH1 = styled.h1`
   text-align: center;
 `;
 const HeroP = styled.p`
-  font-size: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(0.5rem, 2vw, 2rem);
   margin-bottom: 2rem;
   font-weight: 400;
   text-align: center;

@@ -114,14 +114,14 @@ const SingleCard: React.FC<{ prop: CardProps }> = ({ prop }) => {
   return (
     <Card sx={{ maxWidth: 320 }}>
       <CardMedia>
-        <GatsbyImage image={image?.gatsbyImageData} alt={id} />
+        <ImageMedia image={image?.gatsbyImageData} alt={id} />
       </CardMedia>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <span>By: </span>
+          {instructors && <span>By: </span>}
           {instructors?.map((instructor, index) => (
             <span key={instructor.name}>
               {index <= 1 ? "" : "|"}
@@ -138,3 +138,10 @@ const SingleCard: React.FC<{ prop: CardProps }> = ({ prop }) => {
     </Card>
   );
 };
+
+const ImageMedia = styled(GatsbyImage)`
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  box-sizing: border-box;
+`;

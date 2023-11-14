@@ -60,12 +60,16 @@ function SubFieldsContact({
   link,
 }: Readonly<{ link: string | undefined; children: ReactNode }>) {
   return (
-    <LogoInfoContainer>
-      {children}
-      <SubField>
-        <FieldsBox key={link}>{link}</FieldsBox>
-      </SubField>
-    </LogoInfoContainer>
+    <>
+      {link && link.length > 0 && (
+        <LogoInfoContainer>
+          {children}
+          <SubField>
+            <FieldsBox key={link}>{link}</FieldsBox>
+          </SubField>
+        </LogoInfoContainer>
+      )}
+    </>
   );
 }
 
