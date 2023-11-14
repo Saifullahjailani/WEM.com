@@ -61,7 +61,7 @@ function CurriculumsList({ data }: Readonly<{ data: CListType | undefined }>) {
       {data?.nodes.map((item) => {
         return (
           <li key={item.sessionId}>
-            <Link to={`/session/${item.sessionId}`}>{item.sessionName}</Link>
+            <Link to={`/sessions/${item.sessionId}`}>{item.sessionName}</Link>
           </li>
         );
       })}

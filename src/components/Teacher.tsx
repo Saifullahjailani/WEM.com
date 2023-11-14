@@ -14,10 +14,11 @@ const Teacher: React.FC<propsType> = ({ teacher, style }) => {
   return (
     <MyLink to={`/team/${teacher.slug}`}>
       <CardContainer style={style}>
-        {teacher?.avatar?.gatsbyImageData && (
-          <ImageContainer image={teacher.avatar.gatsbyImageData} alt="Team" />
-        )}
-
+        <ImageSection>
+          {teacher?.avatar?.gatsbyImageData && (
+            <ImageContainer image={teacher.avatar.gatsbyImageData} alt="Team" />
+          )}
+        </ImageSection>
         <TextContainer>
           <TextBox>
             <TitleContainer>{teacher.name ?? "Unnamed"}</TitleContainer>
@@ -33,6 +34,18 @@ export default Teacher;
 
 export const MyLink = styled(Link)`
   text-decoration: none;
+`;
+
+const ImageSection = styled.div`
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -52,13 +65,10 @@ const CardContainer = styled.div`
 `;
 
 const ImageContainer = styled(GatsbyImage)`
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  @media screen and (max-width: 768px) {
-    width: 120px;
-    height: 120px;
-  }
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 `;
 
 const TextContainer = styled.div`

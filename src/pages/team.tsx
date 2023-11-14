@@ -17,7 +17,7 @@ const team = () => {
             slug
             title
             avatar {
-              gatsbyImageData(width: 170, placeholder: BLURRED, height: 170)
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
@@ -26,21 +26,21 @@ const team = () => {
   `);
   return (
     <DefaultLayout isMain>
-      <TextContainer>
+      <TextContainer style={{ marginBottom: "0" }}>
         <Title>Meet Our Exceptional Team</Title>
-        <TeamContainer>
-          {allContentfulInstructor.edges.map(({ node }) => (
-            <Teacher
-              key={node.name}
-              teacher={node}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            />
-          ))}
-        </TeamContainer>
       </TextContainer>
+      <TeamContainer>
+        {allContentfulInstructor.edges.map(({ node }) => (
+          <Teacher
+            key={node.name}
+            teacher={node}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          />
+        ))}
+      </TeamContainer>
     </DefaultLayout>
   );
 };
@@ -58,12 +58,16 @@ const TeamContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10%;
   grid-row-gap: 5%;
+  padding: 10%;
+  padding-top: 0;
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
   }
 
   @media screen and (max-width: 868px) {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 

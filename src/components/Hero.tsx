@@ -65,13 +65,15 @@ const HeroH1 = styled.h1`
   font-size: clamp(1.5rem, 6vw, 4rem);
   margin-bottom: 1.5rem;
   letter-spacing: 3px;
-  font-width: bold;
+  font-weight: bold;
   padding: 0 1rem;
+  text-align: center;
 `;
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 3rem);
   margin-bottom: 2rem;
   font-weight: 400;
+  text-align: center;
 `;
 
 const HeroContent = styled.div`

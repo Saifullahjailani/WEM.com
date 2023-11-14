@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import Card, {
+import MyCard, {
   ProductWrapper,
   ProductsContainer,
   ProductsHeading,
@@ -22,7 +22,7 @@ function GetCurriculumsImage(data: NodeType[]) {
   const _curriculums: JSX.Element[] = [];
   data.forEach((item) =>
     _curriculums.push(
-      <Card
+      <MyCard
         prop={{
           id: item.sessionId,
           image: item.cover,

@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultLayout from "./Layout/DefaultLayout";
 import ProductsHeading from "./ProductsHeading";
-import Card, { ProductWrapper, ProductsContainer } from "./Card";
+import MyCard, { ProductWrapper, ProductsContainer } from "./Card";
 import {
   ContentfulRichTextGatsbyReference,
   RenderRichTextData,
@@ -35,7 +35,7 @@ const Course: React.FC<{ pageContext: pageContext }> = ({ pageContext }) => {
         <ProductsHeading>{pageContext.sessionName}</ProductsHeading>
         <ProductWrapper>
           {pageContext.classes.map((item) => (
-            <Card
+            <MyCard
               key={item.classCode}
               prop={{
                 id: item.classCode,

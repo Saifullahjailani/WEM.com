@@ -73,7 +73,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             slug
             title
             avatar {
-              gatsbyImageData(width: 170, placeholder: BLURRED, height: 170)
+              gatsbyImageData(placeholder: BLURRED)
             }
             class {
               className
